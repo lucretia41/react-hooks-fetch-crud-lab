@@ -9,13 +9,13 @@ function QuestionItem({ question, onDeleteClick, onAnswerChange }) {
     </option>
   ));
 
-    function handleDeleteClick() {
-      onDeleteClick(id);
-    }
+  function handleDeleteClick() {
+    onDeleteClick(id);
+  }
 
-    function handleAnswerClick(event) {
-      onAnswerChange(id, parseInt(event.target.value));
-    }
+  function handleAnswerChange(event) {
+    onAnswerChange(id, parseInt(event.target.value));
+  }
 
   return (
     <li>
@@ -23,8 +23,8 @@ function QuestionItem({ question, onDeleteClick, onAnswerChange }) {
       <h5>Prompt: {prompt}</h5>
       <label>
         Correct Answer:
-        <select defaultValue={correctIndex} onChange={handleAnswerClick}>
-        {options}
+        <select defaultValue={correctIndex} onChange={handleAnswerChange}>
+          {options}
         </select>
       </label>
       <button onClick={handleDeleteClick}>Delete Question</button>
